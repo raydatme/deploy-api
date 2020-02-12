@@ -6,7 +6,7 @@ Description: EKSWSV1
 
 Parameters:
 
-  EksClusterName: simple-jwt-api-cluster
+  EksClusterName: simple-jwt-api
     Type: String
     Description: The name of the EKS cluster created
     Default: 
