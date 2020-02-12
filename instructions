@@ -1,0 +1,7 @@
+In one terminal run Python: 
+python main.py 
+
+In another terminal Run Docker: 
+docker run --env-file=env_file -p 80:8080 jwt-api-test 
+
+In the third terminal: Run eks cluster:
