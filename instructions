@@ -1,5 +1,5 @@
-run Python
+run Python!
 python main.py 
 
-run Docker
+run Docker!
 docker run --env-file=env_file -p 80:8080 jwt-api-test 
