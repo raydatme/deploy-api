@@ -8,7 +8,7 @@ This Flask app is a simple API with three endpoints:
 - `POST '/auth'`: Takes an email and a password as json arguments and returns a JWT based on a custom secret.
 - `GET '/contents'`: Requires a valid JWT, and returns the un-encrpyted contents of that token. 
 
-The app relies on a secret set as the environment variable `JWT_SECRET` to produce a JWT. The built-in Flask server is adequate for local development, but not production, the production-ready [Gunicorn](https://gunicorn.org/) server is used to deploy the app.
+The app relies on a secret set as the environment variable `JWT_SECRET` to produce a JWT. The built-in Flask server is adequate for local development, but not production. The production-ready [Gunicorn](https://gunicorn.org/) server is used to deploy the app.
 
 ## Run Locally Without Containerization 
 Install Python dependencies.
