@@ -2,13 +2,13 @@
  
 Server Deployment, Containerization, and Testing.
 
-The Flask app is simple API with three endpoints:
+This Flask app is a simple API with three endpoints:
 
-- `GET '/'`: This is a simple health check, which returns the response 'Healthy'. 
-- `POST '/auth'`: This takes a email and password as json arguments and returns a JWT based on a custom secret.
-- `GET '/contents'`: This requires a valid JWT, and returns the un-encrpyted contents of that token. 
+- `GET '/'`: Simple health check, which returns the response 'Healthy'. 
+- `POST '/auth'`: Takes an email and a password as json arguments and returns a JWT based on a custom secret.
+- `GET '/contents'`: Requires a valid JWT, and returns the un-encrpyted contents of that token. 
 
-The app relies on a secret set as the environment variable `JWT_SECRET` to produce a JWT. The built-in Flask server is adequate for local development, but not production, the production-ready [Gunicorn](https://gunicorn.org/) server is used when deploying the app.
+The app relies on a secret set as the environment variable `JWT_SECRET` to produce a JWT. The built-in Flask server is adequate for local development, but not production, the production-ready [Gunicorn](https://gunicorn.org/) server is used to deploy the app.
 
 ## Dependencies
 
@@ -17,9 +17,5 @@ The app relies on a secret set as the environment variable `JWT_SECRET` to produ
     - For Mac users, if you have no previous Docker Toolbox installation, you can install Docker Desktop for Mac. If you already have a Docker Toolbox installation, please read [this](https://docs.docker.com/docker-for-mac/docker-toolbox/) before installing.
  - AWS Account
 
-1. Write a Dockerfile for a simple Flask API
-2. Build and test the container locally
-3. Create an EKS cluster
-4. Store a secret using AWS Parameter Store
-5. Create a CodePipeline pipeline triggered by GitHub checkins
-6. Create a CodeBuild stage which will build, test, and deploy your code
+## Description
+Dockerfile for simple Flask Api. Uses an EKS cluster, stores `JWT_SECRET` in AWS Parameter Store, and employs a CodePipeline triggered by GitHub commits. Codebuild stage builds, tests, and deploys code. 
